@@ -1,0 +1,7 @@
+[Unit]
+Description=My little test daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/my_little_daemon
+

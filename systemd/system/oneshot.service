@@ -1,0 +1,8 @@
+[Unit]
+Description=Simple oneshot unit
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/oneshot.sh hello
+
