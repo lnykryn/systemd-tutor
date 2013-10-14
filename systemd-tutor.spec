@@ -1,5 +1,5 @@
 Name:		systemd-tutor
-Version:	1
+Version:	2
 Release:	1%{?dist}
 Summary:	Example files for systemd tutorial
 
@@ -31,8 +31,14 @@ make install ROOT=%{buildroot}
 /usr/bin/oneshot.sh
 /usr/lib/systemd/system/oneshot.service
 /usr/lib/systemd/system/my_little_daemon.service
+/usr/lib/systemd/system/my.service
+/usr/lib/systemd/system/really-required.service
+/usr/lib/systemd/system/required.service
 
 %changelog
+* Mon Oct 14 2013 Lukas Nykryn <lnykryn@redhat.com> - 2-1
+- dependencies
+
 * Mon Oct 14 2013 Lukas Nykryn <lnykryn@redhat.com> - 1-1
 - oneshot.sh
 - my_little_daemon
