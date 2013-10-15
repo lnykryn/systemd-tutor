@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 			fclose(f);
         }
         puts(msg);
+        fflush(stdout);
         sleep(1);
     }
 
