@@ -7,7 +7,7 @@ Group:		Applications/System
 License:	Beerware
 Source0:	systemd-tutor-%{version}.tar.bz2
 
-#BuildRequires:	
+BuildRequires:	systemd
 Requires:	systemd
 
 %description
@@ -25,6 +25,28 @@ make %{?_smp_mflags}
 %install
 make install ROOT=%{buildroot}
 
+%post
+if [ $1 -eq 1 ] ; then
+    # Initial installation
+    /usr/bin/systemctl daemon-reload >/dev/null 2>&1 || :
+    /usr/bin/systemctl enable clumsy.service >/dev/null 2>&1 || :
+    /usr/bin/systemctl start clumsy.service >/dev/null 2>&1 || :
+fi
+
+%preun
+if [ $1 -eq 0 ] ; then
+    # Package removal, not upgrade
+    /usr/bin/systemctl --no-reload disable clumsy.service > /dev/null 2>&1 || :
+    /usr/bin/systemctl stop clumsy.service > /dev/null 2>&1 || :
+fi
+
+%postun
+/bin/systemctl daemon-reload >/dev/null 2>&1 || :
+if [ $1 -ge 1 ] ; then
+    # Package upgrade, not uninstall
+    /usr/bin/systemctl restart clumsy.service >/dev/null 2>&1 || :
+fi
+
 
 %files
 /usr/bin/my_little_daemon
@@ -37,6 +59,7 @@ make install ROOT=%{buildroot}
 /usr/lib/systemd/system/required.service
 /usr/lib/systemd/system/screamer.service
 /usr/lib/systemd/system/useless.target
+/usr/lib/systemd/system/clumsy.service
 %config(noreplace) /etc/my_little_daemon.conf
 
 %changelog

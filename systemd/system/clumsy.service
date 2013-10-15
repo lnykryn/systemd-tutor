@@ -1,0 +1,9 @@
+[Unit]
+Description=My little clumsy test daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/false
+
+[Install]
+WantedBy=multi-user.target
