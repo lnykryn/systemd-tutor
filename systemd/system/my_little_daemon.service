@@ -5,3 +5,5 @@ Description=My little test daemon
 Type=simple
 ExecStart=/usr/bin/my_little_daemon
 
+[Install]
+WantedBy=multi-user.target
