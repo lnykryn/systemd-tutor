@@ -1,0 +1,9 @@
+[Unit]
+Description=Uninteresting target
+Requires=multi-user.target
+Conflicts=rescue.service rescue.target
+After=basic.target rescue.service rescue.target
+AllowIsolate=yes
+
+[Install]
+Alias=default.target

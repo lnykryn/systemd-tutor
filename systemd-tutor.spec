@@ -36,6 +36,7 @@ make install ROOT=%{buildroot}
 /usr/lib/systemd/system/really-required.service
 /usr/lib/systemd/system/required.service
 /usr/lib/systemd/system/screamer.service
+/usr/lib/systemd/system/useless.target
 
 %changelog
 * Tue Oct 15 2013 Václav Pavlín <vpavlin@redhat.com> - 3-1
