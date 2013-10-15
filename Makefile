@@ -15,7 +15,7 @@ install:
 	install -m755 oneshot.sh $(ROOT)/usr/bin
 	cp -af systemd/* $(ROOT)/usr/lib/systemd/
 	install -m644 etc/my_little_daemon.conf $(ROOT)/etc/
-	cp -af usr/share/doc/systemd-tutor/* $(ROOT)/usr/share/doc/systemd-tutor
+	cp -af docs/* $(ROOT)/usr/share/doc/systemd-tutor/
 	
 	make install ROOT=$(ROOT) -C src
 
