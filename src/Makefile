@@ -12,7 +12,7 @@ my_little_daemon: my_little_daemon.c
 	$(CC) $(LDFLAGS) -o $@ my_little_daemon.c
 
 screamer: screamer.c
-	$(CC) $(LDFLAGS) -o $@ screamer.c
+	$(CC) $(LDFLAGS) `pkg-config --cflags --libs libsystemd-journal` -o $@ screamer.c
 
 install:
 	mkdir -p $(ROOT)/usr/bin 

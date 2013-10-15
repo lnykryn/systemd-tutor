@@ -4,4 +4,5 @@ Description=Screamer's oneshot unit
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+Environment="HOME=/path/to/home"
 ExecStart=/usr/bin/screamer
