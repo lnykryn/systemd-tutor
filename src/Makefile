@@ -1,7 +1,7 @@
 CFLAGS+=$(RPM_OPT_FLAGS) -Wall -D_GNU_SOURCE
 LDFLAGS+=$(RPM_LD_FLAGS)
 
-PROGS=my_little_daemon screamer
+PROGS=my_little_daemon screamer instanced
 
 all:	$(PROGS)
 
@@ -14,8 +14,12 @@ my_little_daemon: my_little_daemon.c
 screamer: screamer.c
 	$(CC) $(LDFLAGS) `pkg-config --cflags --libs libsystemd-journal` -o $@ screamer.c
 
+instanced: instanced.c
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ -lreadline $<
+
 install:
 	mkdir -p $(ROOT)/usr/bin 
 	install -m 755 my_little_daemon $(ROOT)/usr/bin/my_little_daemon
 	install -m 755 screamer $(ROOT)/usr/bin/screamer
+	install -m 755 instanced $(ROOT)/usr/bin/instanced
 
