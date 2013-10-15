@@ -35,4 +35,10 @@ archive: clean tag
 	@sha1sum systemd-tutor-$(VERSION).tar.bz2 > systemd-tutor-$(VERSION).sha1sum
 	@echo systemd-tutor-$(VERSION).sha1sum >> .git/info/exclude
 	@echo systemd-tutor-$(VERSION).tar.bz2 >> .git/info/exclude
+
+package: archive
+	@mkdir -p $(HOME)/rpmbuild/BUILD $(HOME)/rpmbuild/RPMS $(HOME)/rpmbuild/SOURCES $(HOME)/rpmbuild/SPECS $(HOME)/rpmbuild/SRPMS
+	@cp systemd-tutor.spec $(HOME)/rpmbuild/SPECS
+	@cp systemd-tutor-$(VERSION).tar.bz2 $(HOME)/rpmbuild/SOURCES
+	@rpmbuild -ba systemd-tutor.spec
 	
