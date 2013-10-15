@@ -1,6 +1,6 @@
 Name:		systemd-tutor
 Version:	3
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Example files for systemd tutorial
 
 Group:		Applications/System
@@ -8,7 +8,9 @@ License:	Beerware
 Source0:	systemd-tutor-%{version}.tar.bz2
 
 BuildRequires:	systemd
+BuildRequires:	systemd-devel
 Requires:	systemd
+Requires:	systemd-libs
 
 %description
 Example files for systemd tutorial
