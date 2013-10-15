@@ -67,6 +67,9 @@ fi
 %changelog
 * Tue Oct 15 2013 Václav Pavlín <vpavlin@redhat.com> - 3-1
 - screamer
+- clumsy.service
+- target practice
+- tasks
 
 * Mon Oct 14 2013 Lukas Nykryn <lnykryn@redhat.com> - 2-1
 - dependencies
