@@ -1,5 +1,7 @@
 [Unit]
 Description=Simple xinetd style daemon
+Wants=instanced.target
+PartOf=instanced.target
 
 [Service]
 ExecStart=/usr/bin/instanced

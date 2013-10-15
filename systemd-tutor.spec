@@ -71,6 +71,7 @@ fi
 /usr/lib/systemd/system/clumsy.service
 %{_unitdir}/instanced.socket
 %{_unitdir}/instanced@.service
+%{_unitdir}/instanced.target
 /usr/share/doc/%{name}/tasks.txt
 /usr/share/doc/%{name}/solution.txt
 %config(noreplace) /etc/my_little_daemon.conf
