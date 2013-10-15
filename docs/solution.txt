@@ -35,6 +35,17 @@ Solution
       systemctl set-default useless.target
    b. systemctl isolate useless.target
 
+4. Socket Activation
+   a. Normal sysv services are started based on runlevel configuration in
+      contrast to xinetd services which are started upon receiveing network
+      connection on port configured for a service.
+   b. systemctl enable instanced.socket
+      systemctl start instanced.socket
+   c. systemctl stop instanced.target
+   d. systemctl disable instanced.socket
+      systemctl mask instanced.socket
+      systemctl stop instanced.socket
+   e. Services can be also activated via .path, .timer units or via DBus.
 
 Journal
 =======
