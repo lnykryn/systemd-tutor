@@ -1,0 +1,9 @@
+[Unit]
+Description=instanced socket
+
+[Socket]
+ListenStream=50100
+Accept=True
+
+[Install]
+WantedBy=sockets.target

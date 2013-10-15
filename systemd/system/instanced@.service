@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple xinetd style daemon
+
+[Service]
+ExecStart=/usr/bin/instanced
+StandardInput=socket
+StandardOutput=socket
+
+[Install]
+WantedBy=multi-user.target
