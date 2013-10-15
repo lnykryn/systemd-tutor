@@ -1,4 +1,4 @@
-﻿Prerequisite: systemd-tutor package (https://github.com/lnykryn/systemd-tutor)
+Prerequisite: systemd-tutor package (https://github.com/lnykryn/systemd-tutor)
 
 
 
