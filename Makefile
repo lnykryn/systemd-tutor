@@ -13,6 +13,7 @@ install:
 	
 	install -m755 oneshot.sh $(ROOT)/usr/bin
 	cp -af systemd/* $(ROOT)/usr/lib/systemd/
+	install -m644 etc/my_little_daemon.conf $(ROOT)/etc/
 	
 	make install ROOT=$(ROOT) -C src
 
@@ -22,7 +23,7 @@ tag:
 
 clean:
 	make clean -C src
-	@rm -fv *~ changenew ChangeLog.old *gz
+	@rm -fv *~ changenew ChangeLog.old *bz2 *sha1sum
 	@find . -name "*~" -exec rm -v -f {} \;
 
 archive: clean tag
