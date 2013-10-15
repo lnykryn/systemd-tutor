@@ -1,0 +1,58 @@
+﻿Prerequisite: systemd-tutor package (https://github.com/lnykryn/systemd-tutor)
+
+
+
+Systemctl basics
+================
+
+Tasks
+=====
+
+1. Units
+   a. start, stop, restart, reload configuration and show status of the my_little_daemon
+   b. list all units (or just units of a specific type)
+   c. list all failed units
+   d. get (all) dependencies of the my.service
+   e. start oneshot.service
+
+2. Unit files
+   a. try to explain difference between unit and unit file
+   b. find unit files (all of them) on the disc
+   c. list all unit files through systemctl
+   d. set my_little_daemon.service to be started / not started at boot, forbid to be started at all and show the current state
+   e. modify the unit file oneshoot.service by a drop-in to show different description and start it (after you have done 1. d.)
+
+3. Targets
+   a. show default target, set a new one
+   b. switch to another target
+
+
+Journal
+=======
+
+Prerequisite: Start screamer and my_little_daemon services.
+
+Tasks
+=====
+
+1. Show
+   a. latest entries on top
+   b. specific the number of entries displayed
+   c. continuous stream of new entries
+   d. entries for current boot only
+   e. entries for a specific unit
+   f. entries for a specific PID
+   g. entries for specific time window
+   h. entries for 2 or more specified units/pids
+   i. entries of a specific priority
+   j. entries for a specific binary
+   k. the list of values applicable for _SYSTEMD_UNIT field
+   l. entries of priority=3 for unit screamer and of priority=6 for unit my_little_daemon, both units specified by the path to the binary in file system 
+   m. all fields for specific unit/pid
+
+2. Settings
+   a. Switch to persistent journal and back
+   b. Turn off pager for one run and persistently
+   c. Change the journald disk usage
+
+

@@ -60,6 +60,8 @@ fi
 /usr/lib/systemd/system/screamer.service
 /usr/lib/systemd/system/useless.target
 /usr/lib/systemd/system/clumsy.service
+/usr/share/doc/%{name}/tasks.txt
+/usr/share/doc/%{name}/solution.txt
 %config(noreplace) /etc/my_little_daemon.conf
 
 %changelog

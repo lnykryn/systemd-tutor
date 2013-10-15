@@ -10,10 +10,12 @@ all:
 install:
 	mkdir -p $(ROOT)/etc/ $(ROOT)/usr/bin
 	mkdir -p $(ROOT)/usr/lib/systemd/system
+	mkdir -p $(ROOT)/usr/share/doc/systemd-tutor
 	
 	install -m755 oneshot.sh $(ROOT)/usr/bin
 	cp -af systemd/* $(ROOT)/usr/lib/systemd/
 	install -m644 etc/my_little_daemon.conf $(ROOT)/etc/
+	cp -af usr/share/doc/systemd-tutor/* $(ROOT)/usr/share/doc/systemd-tutor
 	
 	make install ROOT=$(ROOT) -C src
 

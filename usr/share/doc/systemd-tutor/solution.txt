@@ -1,0 +1,62 @@
+Systemctl basics
+================
+
+Solution
+=========
+1. Units
+   a. systemctl start my_little_daemon.service
+      systemctl stop my_little_daemon.service
+      systemctl restart my_little_daemon.service
+      systemctl reload my_little_daemon.service
+      systemctl status my_little_daemon.service
+   b. systemctl list-unit-files
+      systemctl list-unit-files --type service
+   c. systemctl list-units --failed
+   d. systemctl list-dependencies --all my.service
+   e. systemctl start oneshot.service
+
+2. Unit files
+   a. Unit file is a file on the disc. Unit is an abstraction of an object in the system which is managed by systemd.
+   b. ls /run/systemd/system /usr/lib/systemd/system /etc/systemd/system
+   c. systemctl list-unit-files
+   d. systemctl enable my_little_daemon.service
+      systemctl disable my_little_daemon.service
+      systemctl mask my_little_daemon.service
+      systemctl is-enabled my_little_daemon.service
+   e. cd /etc/systemd/system/
+      mkdir oneshot.service.d
+      echo -e "[Unit]\nDescription=Awesome unit\n" > oneshot.service.d/description.conf
+      systemctl --system daemon-reload
+      systemctl stop oneshot.service
+      systemctl start oneshot.service
+
+3. Targets
+   a. systemctl get-default
+      systemctl set-default useless.target
+   b. systemctl isolate useless.target
+
+
+Journal
+=======
+
+Solution
+========
+
+1. Show
+   a. journalctl -r
+   b. journalctl -n 10
+   c. journalctl -f
+   d. journalctl -b
+   e. journalctl -u oneshot.service
+   f. journalctl _PID=1
+   g. journalctl --since=YYYY-MM-DD --until=YYYY-MM-DD
+   h. journalctl _SYSTEMD_UNIT=oneshot.service _SYSTEMD_UNIT=screamer.service
+   i. journalctl -p 3
+   j. journalctl /usr/bin/screamer
+   k. journalctl -F _SYSTEMD_UNIT
+   l. journalctl _EXE=/usr/bin/screamer PRIORITY=3 + _EXE=/usr/bin/my_little_daemon PRIORITY=6
+   m. journalctl --all --output=verbose
+2. Settings
+   a. Change Storage= from volatile to persistent in journald.conf
+   b. For persistent turn off change environment variable $SYSTEMD_PAGER, for one run use --no-pager
+   c. Change SystemMaxUse= in journald.conf
