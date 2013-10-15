@@ -72,8 +72,8 @@ fi
 %{_unitdir}/instanced.socket
 %{_unitdir}/instanced@.service
 %{_unitdir}/instanced.target
-/usr/share/doc/%{name}/tasks.txt
-/usr/share/doc/%{name}/solution.txt
+%doc %{_docdir}/%{name}/tasks.txt
+%doc %{_docdir}/%{name}/solution.txt
 %config(noreplace) /etc/my_little_daemon.conf
 
 %changelog
