@@ -33,7 +33,7 @@ int main() {
 	if (!name)
 		return EXIT_FAILURE;
 
-        printf("%s %s!\n", greetings[rand() % _MAX_GREETING], name);
+	printf("%s %s!\n", greetings[rand() % _MAX_GREETING], name);
 
 	return 0;
 }
