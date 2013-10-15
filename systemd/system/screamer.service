@@ -1,0 +1,7 @@
+[Unit]
+Description=Screamer's oneshot unit
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/screamer

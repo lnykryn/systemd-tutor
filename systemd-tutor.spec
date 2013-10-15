@@ -1,5 +1,5 @@
 Name:		systemd-tutor
-Version:	2
+Version:	3
 Release:	1%{?dist}
 Summary:	Example files for systemd tutorial
 
@@ -29,13 +29,18 @@ make install ROOT=%{buildroot}
 %files
 /usr/bin/my_little_daemon
 /usr/bin/oneshot.sh
+/usr/bin/screamer
 /usr/lib/systemd/system/oneshot.service
 /usr/lib/systemd/system/my_little_daemon.service
 /usr/lib/systemd/system/my.service
 /usr/lib/systemd/system/really-required.service
 /usr/lib/systemd/system/required.service
+/usr/lib/systemd/system/screamer.service
 
 %changelog
+* Tue Oct 15 2013 Václav Pavlín <vpavlin@redhat.com> - 3-1
+- screamer
+
 * Mon Oct 14 2013 Lukas Nykryn <lnykryn@redhat.com> - 2-1
 - dependencies
 
