@@ -30,7 +30,7 @@ Tasks
    a. explain difference between sysv service and xinetd service
    b. make sure that service instanced can be activated via socket
    c. connect couple times to instanced service (thus multiple instances are
-      active) and try to stop all instances at once. instanced runs on port 50100.
+      active, run 'telnet localhost 50100' on multiple terminals) and try to stop all instances at once.
    d. prevent socket activation of instanced service
    e. explain other ways how you can activate units except of normal
       dependencies
