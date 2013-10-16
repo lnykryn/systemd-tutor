@@ -77,6 +77,9 @@ fi
 %config(noreplace) /etc/my_little_daemon.conf
 
 %changelog
+* Wed Oct 16 2013 Michal Sekletar <msekleta@redhat.com> - 4-1
+- add section about socket activated services
+
 * Tue Oct 15 2013 Václav Pavlín <vpavlin@redhat.com> - 3-1
 - screamer
 - clumsy.service
